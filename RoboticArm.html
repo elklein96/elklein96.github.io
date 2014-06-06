@@ -5,10 +5,10 @@
 		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
         <link rel="stylesheet" href="/css/main.css">
         <link rel="shortcut icon" type="image/logo" href="favicon.ico" />
+        <link rel='stylesheet prefetch' href='http://dimsemenov-static.s3.amazonaws.com/dist/magnific-popup.css'>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script>
 			$(window).load(function() {
-
   				$('#header').hide().fadeIn(750, function() {});
   				$('#article').hide().fadeIn(750, function() {});
 			});
@@ -25,9 +25,17 @@
 
 				<div id="article" class="container">
 					<p align = "left" > 
-						Built during my Junior year of high school out of an Arduino microcontroller, an old Erector set, and a Wiimote controller. Using the infrared camera in the Wiimote it tracks the movements of its user and interprets the movements into directions for the robotic arm to move. 
+						Built during my Junior year of high school out of an Arduino microcontroller, an old Erector set, and a Wiimote controller. Using the infrared camera in the Wiimote it tracks the movements of its user and interprets the movements into directions for the robotic arm to move.
 					</p>
-					<p align= "center"><iframe width="55%" height="50%" src="//www.youtube.com/embed/cdub86WUJo4" frameborder="0" allowfullscreen></iframe></p>
+
+					<div id="my-popup" class="mfp-hide white-popup"></div>
+
+					<p align = "center" > 
+						<img id="open-popup" src="/images/arm/thumb.png" alt="See a Demo"><br>
+					</p>
+					<script src='http://dimsemenov-static.s3.amazonaws.com/dist/jquery.magnific-popup.min.js'></script>
+  					<script src="js/popup.js"></script>
+
 					<p align = "left" > 
 						Entered in the 2013 Coriell Science Fair where it won first place in Computer Science along with a two year college scholarship. At the 2013 Delaware Valley Science Fair it was awarded second place from the Leonardo DaVinci Society along with first place from the United States Air Force.
 					</p>
