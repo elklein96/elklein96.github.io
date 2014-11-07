@@ -18,22 +18,30 @@ a:hover {
 #container {
   width: 80%;
   height: 80%;
-  margin: 0px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #header {
   font-size: 235%;
   margin-top: 5%;
-  margin-left: 9%;
-  margin-right: 9%;
-  width: 75%;
+  margin-left: auto;
+  margin-right: auto;
   color: #c70005;
   position: relative;
 }
 
+.page {
+  width: 67.5%;
+}
+
+.index {
+  width: 75%;
+}
+
 #content {
-  margin-left: 9%;
-  margin-right: 9%;
+  margin-left: auto;
+  margin-right: auto;
   padding-bottom: 5%;
   width: 75%;
   font-size: 105%;
@@ -43,8 +51,8 @@ a:hover {
 }
 
 #article {
-  margin-left: 9%;
-  margin-right: 9%;
+  margin-left: auto;
+  margin-right: auto;
   padding-bottom: 5%;
   width: 67.5%;
   font-size: 100%;
