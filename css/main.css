@@ -15,13 +15,6 @@ a:hover {
   color: #c70005;
 }
 
-#container {
-  width: 80%;
-  height: 80%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 #header {
   font-size: 235%;
   margin-top: 5%;
@@ -31,19 +24,10 @@ a:hover {
   position: relative;
 }
 
-.page {
-  width: 67.5%;
-}
-
-.index {
-  width: 75%;
-}
-
 #content {
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 5%;
-  width: 75%;
   font-size: 105%;
   color: #606060;
   position: relative;
@@ -54,7 +38,6 @@ a:hover {
   margin-left: auto;
   margin-right: auto;
   padding-bottom: 5%;
-  width: 67.5%;
   font-size: 100%;
   color: #000000;
   position: relative;
@@ -75,4 +58,34 @@ a:hover {
 #open-popup:hover{
   cursor:pointer;
   opacity: 0.5;
+}
+
+@media screen and (max-width: 400px) {
+  #article {
+    width: 85%;
+  }
+  #content {
+  	width: 75%;
+  }
+  .page {
+  	width: 85%;
+  }
+  .index {
+  	width: 75%;
+  }
+}
+
+@media screen and (min-width: 401px){
+  #article {
+    width: 67.5%;
+  }
+  #content {
+  	width: 85%;
+  }
+  .page {
+  	width: 67.5%;
+  }
+  .index {
+  	width: 75%;
+  }
 }
