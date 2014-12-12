@@ -63,6 +63,14 @@ a:hover {
   opacity: 0.5;
 }
 
+.hidden{
+  opacity: 0;
+}
+
+.visible{
+  opacity: 1;
+}
+
 @media screen and (max-width: 600px) {
   #article {
     width: 85%;

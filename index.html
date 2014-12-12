@@ -4,12 +4,21 @@
 		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
 		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/animate.css">
         <link rel="shortcut icon" type="image/logo" href="favicon.ico" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="js/viewportchecker.js"></script>
 		<script>
 			$(document).ready(function() {
-  				$('#header').hide().fadeIn(750, function() {});
-  				$('#content').hide().fadeIn(750, function() {});
+  				$('#header').addClass("hidden").viewportChecker({
+				    classToAdd: 'visible animated bounceInDown',
+				    offset: 100
+				});
+				$('.post').addClass("hidden").viewportChecker({
+				    classToAdd: 'visible animated bounceInUp',
+				    offset: 100
+				});
+
 			});
 		</script>
         <title>elkDEV</title>
@@ -22,27 +31,31 @@
 					<a href="/index.html"><img src="/images/logo.png" width="50" height="50" alt="logo" ></a> Evan Klein
 					<hr width="90%" align="left">
 				</div>
-
 				<div id="content">
-					<p> I'm an Android developer, </p>
-					<p> hardware hacker,</p> 
-					<p> and aspiring <a href="http://lehigh.edu" target="_blank">computer engineer. </a></p >
-					<hr width="90%" align="left">
+					<div class="post">
+						<p> I'm an Android developer, </p>
+						<p> hardware hacker,</p> 
+						<p> and aspiring <a href="http://lehigh.edu" target="_blank">computer engineer. </a></p >
+						<hr width="90%" height="100%" align="left">
+					</div>
 
-					<p style=""><a href="/RoboticArm.html">Gesture Controlled Robotic Arm </a></p>
-					<p style=""><a href="/AutonCar.html">Autonomous Travel </a></p>
-					<p style=""><a href="/WordManipulator.html" >Word Manipulator </a></p>
-					<p style=""><a href="http://gitpapers.com" >GitPapers </a></p>
-					<p style=""><a href="http://webn.es" target="_blank">webNES </a></p>
-					<p style=""><a href="http://brocast.me" target="_blank">Brocast </a></p>
-					<hr width="90%" align="left">
-
-					<p>	<a href="https://github.com/elklein96" target="_blank">Github </a> |
-						<a href="https://linkedin.com/in/elklein96" target="_blank">LinkedIn </a> |
-						<a href="/images/Resume.pdf" target="_blank">Resume </a> |
-						<a href="mailto:elklein96@gmail.com">Email </a>
-						<a rel="me" href="https://plus.google.com/102823862303456332199/"></a>
-					</p>
+					<div class="post">
+						<p style=""><a href="/RoboticArm.html">Gesture Controlled Robotic Arm </a></p>
+						<p style=""><a href="/AutonCar.html">Autonomous Travel </a></p>
+						<p style=""><a href="/WordManipulator.html" >Word Manipulator </a></p>
+						<p style=""><a href="http://gitpapers.com" >GitPapers </a></p>
+						<p style=""><a href="http://webn.es" target="_blank">webNES </a></p>
+						<p style=""><a href="http://brocast.me" target="_blank">Brocast </a></p>
+						<hr width="90%" align="left">
+					</div>
+					<div class="post">
+						<p>	<a href="https://github.com/elklein96" target="_blank">Github </a> |
+							<a href="https://linkedin.com/in/elklein96" target="_blank">LinkedIn </a> |
+							<a href="/images/Resume.pdf" target="_blank">Resume </a> |
+							<a href="mailto:elklein96@gmail.com">Email </a>
+							<a rel="me" href="https://plus.google.com/102823862303456332199/"></a>
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>

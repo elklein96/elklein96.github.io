@@ -5,14 +5,23 @@
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<script src="/js/jquery.bxslider.min.js"></script>
 		<script src="/js/jquery.bxslider.js"></script>
+		<script src="js/viewportchecker.js"></script>
 		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 		<link rel="stylesheet" href="/css/main.css">
+		<link rel="stylesheet" href="css/animate.css">
         <link href="/css/jquery.bxslider.css" rel="stylesheet" />
         <link rel="shortcut icon" type="image/logo" href="favicon.ico" />
 		<script>
-			$(window).load(function() {
-  				$('#header').hide().fadeIn(750, function() {});
-  				$('#article').hide().fadeIn(750, function() {});
+			$(document).ready(function() {
+  				$('#header').addClass("hidden").viewportChecker({
+				    classToAdd: 'visible animated bounceInDown',
+				    offset: 100
+				});
+				$('.post').addClass("hidden").viewportChecker({
+				    classToAdd: 'visible animated bounceInUp',
+				    offset: 100
+				});
+
 			});
 		</script>
         <title>Autonomous Assisted Travel</title>

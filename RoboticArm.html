@@ -4,13 +4,22 @@
 		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
 		<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
         <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="css/animate.css">
         <link rel="shortcut icon" type="image/logo" href="favicon.ico" />
         <link rel='stylesheet prefetch' href='http://dimsemenov-static.s3.amazonaws.com/dist/magnific-popup.css'>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="js/viewportchecker.js"></script>
         <script>
-			$(window).load(function() {
-  				$('#header').hide().fadeIn(750, function() {});
-  				$('#article').hide().fadeIn(750, function() {});
+			$(document).ready(function() {
+  				$('#header').addClass("hidden").viewportChecker({
+				    classToAdd: 'visible animated bounceInDown',
+				    offset: 100
+				});
+				$('#article').addClass("hidden").viewportChecker({
+				    classToAdd: 'visible animated bounceInUp',
+				    offset: 100
+				});
+
 			});
 		</script>
         <title>Gestured Controlled Robotic Arm</title>
