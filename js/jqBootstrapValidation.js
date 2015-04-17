@@ -1,13 +1,3 @@
-/* jqBootstrapValidation
- * A plugin for automating validation on Twitter Bootstrap formatted forms.
- *
- * v1.3.6
- *
- * License: MIT <http://opensource.org/licenses/mit-license.php> - see LICENSE file
- *
- * http://ReactiveRaven.github.com/jqBootstrapValidation/
- */
-
 (function( $ ){
 
 	var createdElements = [];
@@ -15,17 +5,17 @@
 	var defaults = {
 		options: {
 			prependExistingHelpBlock: false,
-			sniffHtml: true, // sniff for 'required', 'maxlength', etc
-			preventSubmit: true, // stop the form submit event from firing if validation fails
-			submitError: false, // function called if there is an error when trying to submit
-			submitSuccess: false, // function called just before a successful submit event is sent to the server
-            semanticallyStrict: false, // set to true to tidy up generated HTML output
+			sniffHtml: true, 
+			preventSubmit: true,
+			submitError: false, 
+			submitSuccess: false,
+            semanticallyStrict: false,
 			autoAdd: {
 				helpBlocks: true
 			},
             filter: function () {
-                // return $(this).is(":visible"); // only validate elements you can see
-                return true; // validate everything
+                
+                return true; 
             }
 		},
     methods: {
@@ -80,7 +70,6 @@
 
         return this.each(function(){
 
-          // Get references to everything we're interested in
           var $this = $(this),
             $controlGroup = $this.parents(".control-group").first(),
             $helpBlock = $controlGroup.find(".help-block").first(),
@@ -94,17 +83,9 @@
 							createdElements.push($helpBlock[0]);
           }
 
-          // =============================================================
-          //                                     SNIFF HTML FOR VALIDATORS
-          // =============================================================
-
-          // *snort sniff snuffle*
-
           if (settings.options.sniffHtml) {
             var message = "";
-            // ---------------------------------------------------------
-            //                                                   PATTERN
-            // ---------------------------------------------------------
+            
             if ($this.attr("pattern") !== undefined) {
               message = "Not in the expected format<!-- data-validation-pattern-message to override -->";
               if ($this.data("validationPatternMessage")) {
@@ -113,9 +94,7 @@
               $this.data("validationPatternMessage", message);
               $this.data("validationPatternRegex", $this.attr("pattern"));
             }
-            // ---------------------------------------------------------
-            //                                                       MAX
-            // ---------------------------------------------------------
+            
             if ($this.attr("max") !== undefined || $this.attr("aria-valuemax") !== undefined) {
               var max = ($this.attr("max") !== undefined ? $this.attr("max") : $this.attr("aria-valuemax"));
               message = "Too high: Maximum of '" + max + "'<!-- data-validation-max-message to override -->";
@@ -125,9 +104,7 @@
               $this.data("validationMaxMessage", message);
               $this.data("validationMaxMax", max);
             }
-            // ---------------------------------------------------------
-            //                                                       MIN
-            // ---------------------------------------------------------
+            
             if ($this.attr("min") !== undefined || $this.attr("aria-valuemin") !== undefined) {
               var min = ($this.attr("min") !== undefined ? $this.attr("min") : $this.attr("aria-valuemin"));
               message = "Too low: Minimum of '" + min + "'<!-- data-validation-min-message to override -->";
@@ -137,9 +114,7 @@
               $this.data("validationMinMessage", message);
               $this.data("validationMinMin", min);
             }
-            // ---------------------------------------------------------
-            //                                                 MAXLENGTH
-            // ---------------------------------------------------------
+            
             if ($this.attr("maxlength") !== undefined) {
               message = "Too long: Maximum of '" + $this.attr("maxlength") + "' characters<!-- data-validation-maxlength-message to override -->";
               if ($this.data("validationMaxlengthMessage")) {
