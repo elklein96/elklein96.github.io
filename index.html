@@ -52,7 +52,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <img class="img-responsive img-circle" src="img/profile.jpg" alt="">
+                    <img class="img-responsive img-circle" src="img/profile-1.jpg" alt="">
                     <div class="intro-text">
                         <span class="name">Evan Klein</span>
                         <hr class="star-light">
@@ -113,13 +113,13 @@
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
-                    <a href="#gitpapersModal" class="portfolio-link" data-toggle="modal" rel="me">
+                    <a href="#spotifyModal" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/gitpapers.png" class="img-responsive" alt="">
+                        <img src="img/portfolio/spotify-dl.png" class="img-responsive" alt="" rel="me">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -130,6 +130,16 @@
                             </div>
                         </div>
                         <img src="img/portfolio/reelr.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#gitpapersModal" class="portfolio-link" data-toggle="modal" rel="me">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/portfolio/gitpapers.png" class="img-responsive" alt="">
                     </a>
                 </div>
                 <div class="col-sm-4 portfolio-item">
@@ -400,7 +410,7 @@
             </div>
         </div>
     </div>
-    <div class="portfolio-modal modal fade" id="gitpapersModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="portfolio-modal modal fade" id="spotifyModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -412,12 +422,12 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>GitPapers</h2>
+                            <h2>spotify-dl</h2>
                             <hr class="star-primary">
-                            <img src="img/portfolio/gitpapers.png" class="img-responsive img-centered" alt="">
-                            <p style="text-align:left;">GitPapers is a blog publishing platform for git. First, create and initialize a new GitHub repository named gitpapers-blog. Next, write up the article you want to post in a markdown (.md) file. Finally, add your markdown (.md) file to the repository.</p>
-                            <p style="text-align:left;">GitPapers uses a Node.js server running Express to pull posts from the GitHub repository and format them in markdown.</p>
-                            <a class="btn btn-default" href="https://github.com/jawerty/gitpapers" rel="me"><i class="fa fa-github fa-lg"></i> Github</a>
+                            <img src="img/portfolio/spotify-dl.png" class="img-responsive img-centered" alt="">
+                            <p style="text-align:left;">Download full Spotify playlists to your local machine. Spotify-dl uses the Spotify API to acces the track listing of a given playlist, then queries YouTube for the most relevant video of that song. After downloading the viedo, it extracts the audio and presents it to the user.</p>
+                            <p style="text-align:left;">Spotify-dl is written entriely in Node.js. It employs Express Server, socket.io, cron, Spotify API and the YouTube Data API v3.</p>
+                            <a class="btn btn-default" href="https://github.com/elklein96/spotify-dl" rel="me"><i class="fa fa-github fa-lg"></i> Github</a>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
                     </div>
@@ -443,6 +453,31 @@
                             <p style="text-align:left;">reelr is an open-source dynamic interface for a movie server, optimized for Raspbian and Apache Web Server. Plex - a popular movie server alternative - trascodes data as it streams from server to client. This is all good, but when it comes to slower processors like the Raspberry Pi, Plex can be problematic. reelr is simply a front end that streams movie files as-is; no transcoding involved.</p>
                             <p style="text-align:left;">reelr is written completely in Javascript and PHP, utilizing jQuery.</p>
                             <a class="btn btn-default" href="https://github.com/elklein96/reelr" rel="me"><i class="fa fa-github fa-lg"></i> Github</a>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="portfolio-modal modal fade" id="gitpapersModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>GitPapers</h2>
+                            <hr class="star-primary">
+                            <img src="img/portfolio/gitpapers.png" class="img-responsive img-centered" alt="">
+                            <p style="text-align:left;">GitPapers is a blog publishing platform for git. First, create and initialize a new GitHub repository named gitpapers-blog. Next, write up the article you want to post in a markdown (.md) file. Finally, add your markdown (.md) file to the repository.</p>
+                            <p style="text-align:left;">GitPapers uses a Node.js server running Express to pull posts from the GitHub repository and format them in markdown.</p>
+                            <a class="btn btn-default" href="https://github.com/jawerty/gitpapers" rel="me"><i class="fa fa-github fa-lg"></i> Github</a>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
                     </div>
@@ -491,8 +526,10 @@
                             <hr class="star-primary">
                             <img src="img/portfolio/word.png" class="img-responsive img-centered" alt="">
                             <p style="text-align:left;">Some features include a Backwards Generator, Spoonerism Generator, Pig Latin Translator, and more! The Word Manipulator can even speak words and phrases back to you in English. This app is perfect for entertaining friends and yourself, and Facebook and Twitter integration let users share their Pig Latin and backwards phrases with the world!</p>
-                            <p style="text-align:left;">Word Manipulator was my first application. I wrote it as part of a class in Java Swing, and ported it to Android afterwards.</p>
-                            <a class="btn btn-default" href="https://github.com/jawerty/caster.link" rel="me"><i class="fa fa-github fa-lg"></i> Github</a>
+                            <p style="text-align:left;">
+                            Word Manipulator was my first application. I wrote it as part of a class in Java Swing, and ported it to Android.</p>
+                            <a href="https://play.google.com/store/apps/details?id=com.backwards.app"><img alt="Get it on Google Play" src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png"/></a>
+                            <br>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
                     </div>
