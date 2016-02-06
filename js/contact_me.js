@@ -15,13 +15,13 @@ $(function() {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
-                url: "././mail/contact_me.php",
+                url: "http://108.24.150.90/scripts/send_email.php",
                 type: "POST",
-                data: {
-                    name: name,
-                    phone: phone,
-                    email: email,
-                    message: message
+                data:   {
+                    recipients:   "elklein96@gmail.com",
+                    from:         "evan@elkdev.com",
+                    subject:      "Someone contacted me! :D",
+                    emailBody:    "<p>Contact info: "+name+", "+phone+", "+email+".</p><p>"+message+"</p>"
                 },
                 cache: false,
                 success: function() {
@@ -29,7 +29,7 @@ $(function() {
                     $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
                     $('#success > .alert-success')
-                        .append("<strong>Your message has been sent. </strong>");
+                        .append("<strong>Thanks for the message, "+firstName+"! </strong>");
                     $('#success > .alert-success')
                         .append('</div>');
 
@@ -39,7 +39,7 @@ $(function() {
                     $('#success').html("<div class='alert alert-danger'>");
                     $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                         .append("</button>");
-                    $('#success > .alert-danger').append("<strong>Sorry " + firstName + ", it seems that my mail server is not responding. Please try again later!");
+                    $('#success > .alert-danger').append("<strong>I'm sorry " + firstName + ", I'm afraid I can't do that. Please try again later!");
                     $('#success > .alert-danger').append('</div>');
                     
                     $('#contactForm').trigger("reset");

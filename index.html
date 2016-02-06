@@ -20,7 +20,7 @@
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -29,7 +29,7 @@
                 <a class="navbar-brand" href="#page-top" rel="me">Evan Klein</a>
             </div>
 
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse" id="bs-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
                         <a href="#page-top" rel="me"></a>
@@ -270,7 +270,7 @@
                                 <a href="https://twitter.com/eklein96" class="btn-social btn-outline" rel="me"><i class="fa fa-fw fa-twitter"></i></a>
                             </li>
                             <li>
-                                <a href="https://plus.google.com/102823862303456332199/" class="btn-social btn-outline" rel="me"><i class="fa fa-fw fa-google-plus"></i></a>
+                                <a href="https://plus.google.com/+EvanKlein96" class="btn-social btn-outline" rel="me"><i class="fa fa-fw fa-google-plus"></i></a>
                             </li>
                             <li>
                                 <a href="mailto:elklein96@gmail.com" class="btn-social btn-outline" rel="me"><i class="fa fa-envelope"></i></a>
@@ -317,8 +317,8 @@
                             <h2>Gesture Controlled Robotic Arm</h2>
                             <hr class="star-primary">
                             <img src="img/portfolio/arm.jpg" class="img-responsive img-centered" alt="">
-                            <p style="text-align:left;">Built during my Junior year of high school out of an Arduino microcontroller, an old Erector set, and a Wiimote controller. Using the infrared camera in the Wiimote it tracks the movements of its user and interprets the movements into directions for the robotic arm to move.</p>
-                            <p style="text-align:left;">Entered in the 2013 Coriell Science Fair where it won first place in Computer Science along with a two year college scholarship. At the 2013 Delaware Valley Science Fair it was awarded second place from the Leonardo DaVinci Society along with first place from the United States Air Force.</p>
+                            <p style="text-align:left;">I constructed this during my Junior year of high school out of an Arduino microcontroller, an old Erector set, and a Wiimote controller. Using the infrared camera in the Wiimote it tracks the movements of its user and interprets the movements into directives which move the arm.</p>
+                            <p style="text-align:left;">I entered it in the 2013 Coriell Science Fair where it won first place in Computer Science along with a two year college scholarship. At the 2013 Delaware Valley Science Fair it was awarded second place from the Leonardo DaVinci Society along with first place from the United States Air Force.</p>
                             <a class="btn btn-default" href="https://github.com/elklein96/gesture-controlled-robotic-arm" rel="me"><i class="fa fa-github fa-lg"></i> Github</a> 
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
@@ -342,9 +342,9 @@
                             <h2>Autonomous Assisted Travel</h2>
                             <hr class="star-primary">
                             <img src="img/portfolio/car.jpg" class="img-responsive img-centered" alt="">
-                            <p style="text-align:left;">My goal for this project was to create a an autonomous vehicle that could eventually serve as a form of autonomous travel for the handicapped. First, I created an Android application that could recognize and solve mazes. For the occupant to make their vehicle travel, they simply took a picture of a building’s floor plan and specified a beginning and end point. From the application, an infrared transmitter beamed the solution path of the maze to the Arduino, which interpreted these directions into movements. The Arduino could also identify and avoid obstacles in front of it while traveling along the predetermined path.</p>
-                            <p style="text-align:left;">I also constructed a small car that served as the role of the wheelchair. The final product was built out of an Arduino micro-controller, servo motors, and an infrared receiver. It was 5"x5" and could maneuver through a maze while avoiding all obstacles that were placed in front of it.</p>
-                            <p style="text-align:left;">Entered in the 2014 Coriell Science Fair where it won first place in Computer Science.</p>
+                            <p class="text-left">My goal for this project was to create vehicle that could eventually serve as a form of autonomous travel. The only parameter was a schematic of the desired travel pzth from above. First, I created an Android application that used computer vision to solve mazes. After solving the maze, the Android app employed an infrared transmitter to beam the solution data of the maze to an Arduino, which interpreted these directives into movements. The Arduino was equipped with onboard object detection and avoidance software to circumvent objects in the vehicle's path.</p>
+                            <p class="text-left">I also constructed a small car that served as the role of the autonomous vehicle. The final product was comprised of an Arduino micro-controller, stepper motors, and an infrared receiver. It was 5"x5" and could maneuver through a maze while avoiding all obstacles that were placed in front of it.</p>
+                            <p class="text-left">Entered in the 2014 Coriell Science Fair where it won first place in Computer Science.</p>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
                     </div>
@@ -368,8 +368,8 @@
                             <hr class="star-primary">
                             <img src="img/portfolio/webnes.png" class="img-responsive img-centered" alt="">
                             <h3>An NES emulator for everyone.</h3>
-                            <p style="text-align:left;">webNES is a web-based NES emulator accessable on any mobile browser. You can add ROMs via Dropbox and use the emulator while offline. The touch based controls are just as responsive as a native app.</p>
-                            <p style="text-align:left;">We used jQuery to build the touch interface, Local Storage and WebSQL to store the ROMs offline. It also supports the HTML5 Offline Application Cache, allowing you to use the emulator with no internet connection. It can even be added as an icon to the home screen for a full screen, immersive experience.</p>
+                            <p class="text-left">webNES is an NES emulator in a browser. You can add ROMs via Dropbox and use the emulator while offline. The touch based controls are just as responsive as a native app.</p>
+                            <p class="text-left">We used jQuery to build the touch interface, Local Storage and WebSQL to store the ROMs offline. It also supports HTML5 Offline Application Caching, allowing you to use the emulator with no internet connection. It can even be added as an icon to the home screen for a full screen, immersive experience.</p>
                             <ul class="list-inline item-details">
                                 <li><strong><a href="http://webn.es">Access webNES here</a></strong></li>
                             </ul>
@@ -397,8 +397,8 @@
                             <hr class="star-primary">
                             <img src="img/portfolio/brocast.png" class="img-responsive img-centered" alt="">
                             <h3>Stream your screen like a bro.</h3>
-                            <p style="text-align:left;">Brocast is a screen sharing app available as a Google Chrome Extension in the Chrome Web Store. Brocast live streams your desktop to any user, simply by sending them the generated URL. Users can collaborate through annotating the screen and optionally remotely controlling the host's computer.</p>
-                            <p style="text-align:left;">Through the use of WebRTC, brocast connects users via websockets which travel through our custom Node.js signaling server. What sets brocast apart is its use of cutting edge WebRTC technologies, which allows us to obtain not only captures windows, but the entire desktop.</p>
+                            <p class="text-left">Brocast is a screen sharing and remote desktop Google Chrome Extension, available in the Chrome Web Store. Brocast live streams your desktop to anyone, simply by sending them your unique session URL. Users can collaborate through annotating the screen remotely controlling the host's computer.</p>
+                            <p class="text-left">Through the use of WebRTC, Brocast connects users via websockets which travel through our custom Node.js signaling server. What sets Brocast apart is its use of WebRTC, which allows for peer to peer streaming and puts all computation on the client machines.</p>
                             <ul class="list-inline item-details">
                                 <li><strong><a href="http://brocast.me">Access Brocast here</a></strong></li>
                             </ul>
@@ -425,8 +425,8 @@
                             <h2>spotify-dl</h2>
                             <hr class="star-primary">
                             <img src="img/portfolio/spotify-dl.png" class="img-responsive img-centered" alt="">
-                            <p style="text-align:left;">Download full Spotify playlists to your local machine. Spotify-dl uses the Spotify API to acces the track listing of a given playlist, then queries YouTube for the most relevant video of that song. After downloading the viedo, it extracts the audio and presents it to the user.</p>
-                            <p style="text-align:left;">Spotify-dl is written entriely in Node.js. It employs Express Server, socket.io, cron, Spotify API and the YouTube Data API v3.</p>
+                            <p class="text-left">Download full Spotify playlists to your local machine. Spotify-dl uses the Spotify API to access the track listing of a given playlist, then queries YouTube for the most relevant video of that song. After downloading the viedo, it extracts the audio and presents it to the user.</p>
+                            <p class="text-left">Spotify-dl is written entriely in Node.js. It employs Express Server, socket.io, Spotify API and the YouTube Data API v3.</p>
                             <a class="btn btn-default" href="https://github.com/elklein96/spotify-dl" rel="me"><i class="fa fa-github fa-lg"></i> Github</a>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
@@ -450,8 +450,8 @@
                             <h2>reelr</h2>
                             <hr class="star-primary">
                             <img src="img/portfolio/reelr.png" class="img-responsive img-centered" alt="">
-                            <p style="text-align:left;">reelr is an open-source dynamic interface for a movie server, optimized for Raspbian and Apache Web Server. Plex - a popular movie server alternative - trascodes data as it streams from server to client. This is all good, but when it comes to slower processors like the Raspberry Pi, Plex can be problematic. reelr is simply a front end that streams movie files as-is; no transcoding involved.</p>
-                            <p style="text-align:left;">reelr is written completely in Javascript and PHP, utilizing jQuery.</p>
+                            <p class="text-left">reelr is an open-source dynamic interface for a movie server, optimized for Raspbian and Apache Web Server. Plex - a popular movie server alternative - trascodes data as it streams from server to client. This is all good, but when it comes to slower processors like the Raspberry Pi, Plex can be problematic. reelr is simply a front end that streams movie files as-is; no transcoding involved.</p>
+                            <p class="text-left">reelr is written completely in Javascript and PHP, utilizing jQuery.</p>
                             <a class="btn btn-default" href="https://github.com/elklein96/reelr" rel="me"><i class="fa fa-github fa-lg"></i> Github</a>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
@@ -475,8 +475,8 @@
                             <h2>GitPapers</h2>
                             <hr class="star-primary">
                             <img src="img/portfolio/gitpapers.png" class="img-responsive img-centered" alt="">
-                            <p style="text-align:left;">GitPapers is a blog publishing platform for git. First, create and initialize a new GitHub repository named gitpapers-blog. Next, write up the article you want to post in a markdown (.md) file. Finally, add your markdown (.md) file to the repository.</p>
-                            <p style="text-align:left;">GitPapers uses a Node.js server running Express to pull posts from the GitHub repository and format them in markdown.</p>
+                            <p class="text-left">GitPapers is a blog publishing platform for git. Simply, create and initialize a new GitHub repository named gitpapers-blog, write up a post in Markdown format, and push it to your repository.</p>
+                            <p class="text-left">GitPapers uses a Node.js server running Express to pull posts from GitHub and format the Markdown.</p>
                             <a class="btn btn-default" href="https://github.com/jawerty/gitpapers" rel="me"><i class="fa fa-github fa-lg"></i> Github</a>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
@@ -500,8 +500,8 @@
                             <h2>Caster</h2>
                             <hr class="star-primary">
                             <img src="img/portfolio/caster.png" class="img-responsive img-centered" alt="">
-                            <p style="text-align:left;">Ever want to see what your friends are up to? Now you can at the simple touch of a button. Caster allows you to live stream the camera feed from your Android device using webRTC.</p>
-                            <p style="text-align:left;">Caster uses webRTC MultiPeerConnect to stream live video to unlimited peers who open the unique link to the live stream. Using a custom Signaling Server to initiate the peer-to-peer connection, Caster also takes advantage of WebSockets in order to transfer data quickly and efficiently.</p>
+                            <p class="text-left">Ever want to see what your friends are up to? Now you can at the simple touch of a button. Caster allows you to live stream the camera feed from your Android device using WebRTC.</p>
+                            <p class="text-left">Caster uses WebRTC MultiPeerConnect to stream live video to unlimited peers who open the unique link to the live stream. Using a custom Signaling Server to initiate the peer-to-peer connection, Caster also takes advantage of WebSockets in order to transfer data quickly and efficiently.</p>
                             <a class="btn btn-default" href="https://github.com/jawerty/caster.link" rel="me"><i class="fa fa-github fa-lg"></i> Github</a>
                             <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
@@ -525,8 +525,8 @@
                             <h2>Word Manipulator</h2>
                             <hr class="star-primary">
                             <img src="img/portfolio/word.png" class="img-responsive img-centered" alt="">
-                            <p style="text-align:left;">Some features include a Backwards Generator, Spoonerism Generator, Pig Latin Translator, and more! The Word Manipulator can even speak words and phrases back to you in English. This app is perfect for entertaining friends and yourself, and Facebook and Twitter integration let users share their Pig Latin and backwards phrases with the world!</p>
-                            <p style="text-align:left;">
+                            <p class="text-left">Some features include a Backwards Generator, Spoonerism Generator, Pig Latin Translator, and more! The Word Manipulator can even speak words and phrases back to you in English. This app is perfect for entertaining friends and yourself, and Facebook and Twitter integration let users share their Pig Latin and backwards phrases with the world!</p>
+                            <p class="text-left">
                             Word Manipulator was my first application. I wrote it as part of a class in Java Swing, and ported it to Android.</p>
                             <a href="https://play.google.com/store/apps/details?id=com.backwards.app"><img alt="Get it on Google Play" src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png"/></a>
                             <br>
