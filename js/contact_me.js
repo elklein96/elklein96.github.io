@@ -18,7 +18,7 @@ $(function() {
                 url: "http://108.24.150.90/scripts/send_email.php",
                 type: "POST",
                 data:   {
-                    recipients:   "elklein96@gmail.com",
+                    recipients:   ["elklein96@gmail.com"],
                     from:         "evan@elkdev.com",
                     subject:      "Someone contacted me! :D",
                     emailBody:    "<p>Contact info: "+name+", "+phone+", "+email+".</p><p>"+message+"</p>"
