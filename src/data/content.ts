@@ -146,6 +146,13 @@ export const speaking: Mention[] = [
     href: press.techradar,
   },
   {
+    title: 'A Beloved Disney World Ride Has Finally Reopened After an 8-Month Refurbishment',
+    detail: 'People · April 2026',
+    kind: 'article',
+    date: '2026-04-09',
+    href: 'https://people.com/a-beloved-disney-world-attraction-reopens-after-an-8-month-refurbishment-11946862',
+  },
+  {
     title: "Final playtests for Buzz Lightyear's Space Ranger Spin",
     detail: 'Walt Disney Imagineering on YouTube · March 2026',
     kind: 'video',
