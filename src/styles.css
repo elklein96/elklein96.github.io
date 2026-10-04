@@ -1,0 +1,31 @@
+:root {
+  --font: 'Inter Variable', system-ui, -apple-system, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+body,
+.v-application,
+[class*='text-'] {
+  font-family: var(--font) !important;
+}
+
+.section {
+  padding-block: 72px;
+}
+
+.section + .section {
+  border-top: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
+}
+
+.eyebrow {
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase;
+}
+
+.measure {
+  max-width: 64ch;
+}
