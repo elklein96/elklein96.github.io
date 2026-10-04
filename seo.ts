@@ -17,9 +17,6 @@ function mention(m: Mention) {
       publisher: { '@type': 'Organization', name: 'Walt Disney Imagineering' },
     }
   }
-  if (m.kind === 'talk') {
-    return { '@type': 'Event', name: m.title, description: m.detail, startDate: m.date, performer: { '@id': personId } }
-  }
   return { '@type': 'NewsArticle', headline: m.title, url: m.href, datePublished: m.date }
 }
 
@@ -37,7 +34,8 @@ function structuredData() {
     email: `mailto:${profile.email}`,
     // Profiles that belong to this person. Press coverage goes in subjectOf, not here.
     sameAs: [profile.linkedin, profile.github],
-    subjectOf: speaking.map(mention),
+    // Talks are left out: Google's Event markup needs a venue and exact date, and only helps for upcoming events.
+    subjectOf: speaking.filter((s) => s.kind !== 'talk').map(mention),
   }
 
   const attractions = projects.map((p) => ({
