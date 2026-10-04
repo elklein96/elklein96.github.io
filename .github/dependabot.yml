@@ -8,6 +8,11 @@ updates:
       # One PR per month for routine updates instead of one per package.
       dependencies:
         update-types: [minor, patch]
+    ignore:
+      # vue-tsc can't load TypeScript 7 (the Go rewrite drops typescript/lib/tsc).
+      # Remove once Vue's tooling supports it.
+      - dependency-name: typescript
+        update-types: [version-update:semver-major]
 
   - package-ecosystem: github-actions
     directory: /
