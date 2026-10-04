@@ -6,4 +6,8 @@ import { seo } from './seo.ts'
 export default defineConfig({
   plugins: [vue(), vuetify({ autoImport: true }), seo()],
   ssr: { noExternal: ['vuetify'] },
+  ssgOptions: {
+    // Inline the CSS the prerendered page uses; load the full stylesheet without blocking render.
+    beastiesOptions: { preload: 'media' },
+  },
 })

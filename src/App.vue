@@ -63,7 +63,15 @@ const year = new Date().getFullYear()
         <section class="section pt-12 pt-md-16">
           <div class="d-flex flex-column flex-sm-row align-sm-center ga-5 mb-6">
             <v-avatar size="112" class="flex-shrink-0">
-              <img :src="profile.photo" alt="Evan Klein" width="112" height="112" fetchpriority="high" />
+              <img
+                src="/img/evan-klein-224.jpg"
+                srcset="/img/evan-klein-224.jpg 224w, /img/evan-klein-336.jpg 336w"
+                sizes="112px"
+                alt="Evan Klein"
+                width="112"
+                height="112"
+                fetchpriority="high"
+              />
             </v-avatar>
             <div>
               <h1 class="text-headline-large text-md-display-small font-weight-semibold mb-2">
@@ -135,22 +143,24 @@ const year = new Date().getFullYear()
         <!-- Speaking & press -->
         <section id="speaking" class="section">
           <h2 class="eyebrow text-label-large text-medium-emphasis mb-6">Speaking &amp; press</h2>
-          <v-list bg-color="transparent" class="pa-0">
-            <v-list-item
-              v-for="s in speaking"
-              :key="s.title"
-              class="px-0"
-              lines="three"
-              :href="s.href"
-              :target="s.href ? '_blank' : undefined"
-              :rel="s.href ? 'noopener' : undefined"
-              :prepend-icon="mentionIcons[s.kind]"
-              :append-icon="s.href ? mdiArrowTopRight : undefined"
-            >
-              <v-list-item-title class="text-title-medium font-weight-semibold text-wrap">{{ s.title }}</v-list-item-title>
-              <v-list-item-subtitle class="text-wrap">{{ s.detail }}</v-list-item-subtitle>
-            </v-list-item>
-          </v-list>
+          <ul class="press-list">
+            <li v-for="s in speaking" :key="s.title">
+              <component
+                :is="s.href ? 'a' : 'div'"
+                class="press-item text-high-emphasis"
+                :href="s.href"
+                :target="s.href ? '_blank' : undefined"
+                :rel="s.href ? 'noopener' : undefined"
+              >
+                <v-icon :icon="mentionIcons[s.kind]" class="text-medium-emphasis mt-1" />
+                <span class="flex-grow-1">
+                  <span class="d-block text-title-medium font-weight-semibold">{{ s.title }}</span>
+                  <span class="d-block text-body-medium text-medium-emphasis">{{ s.detail }}</span>
+                </span>
+                <v-icon v-if="s.href" :icon="mdiArrowTopRight" size="small" class="text-medium-emphasis mt-1" />
+              </component>
+            </li>
+          </ul>
         </section>
 
         <!-- Side projects -->
@@ -214,6 +224,24 @@ const year = new Date().getFullYear()
   margin-top: 48px;
   padding-top: 48px;
   border-top: 1px solid rgba(var(--v-border-color), var(--v-border-opacity));
+}
+
+.press-list {
+  list-style: none;
+  padding: 0;
+}
+
+.press-item {
+  display: flex;
+  gap: 16px;
+  padding: 12px 8px;
+  margin-inline: -8px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+a.press-item:hover {
+  background: rgba(var(--v-theme-on-surface), 0.05);
 }
 
 .highlights {
