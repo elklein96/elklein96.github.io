@@ -1,5 +1,3 @@
-// All site copy lives here. Edit this file to update the site.
-
 export const site = 'https://evanklein.tech/'
 
 const press = {
@@ -51,7 +49,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    name: 'Millennium Falcon: Smugglers Run × Fortnite',
+    name: 'Millennium Falcon: Smugglers Run x Fortnite',
     where: "Disneyland & Disney's Hollywood Studios",
     year: '2026',
     summary:
@@ -96,8 +94,8 @@ export const projects: Project[] = [
     summary:
       'Lead technical architect on the Guest Experience System behind the two-night immersive Star Wars adventure.',
     highlights: [
-      'Built the simulation, testing and automation tooling used to deliver the system',
-      'Added observability, monitoring and resiliency work to harden it for operation',
+      'Built the simulation, testing and automation tooling used to deliver the interactive system',
+      'Added observability, monitoring, LiveOps tools, and resiliency to harden it for operation',
       'Led the team that sustained it and shipped new interactive features after launch',
     ],
     tags: ['Interactive systems', 'Simulation', 'Observability'],
