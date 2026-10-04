@@ -10,6 +10,7 @@ import {
   mdiPlayCircleOutline,
 } from '@mdi/js'
 import { profile, projects, sideProjects, speaking } from './data/content'
+import YouTubeLite from './components/YouTubeLite.vue'
 
 const nav = [
   { label: 'Projects', href: '#projects' },
@@ -115,6 +116,20 @@ const year = new Date().getFullYear()
                 <div class="d-md-none text-label-large text-secondary mb-1">{{ p.year }} · {{ p.where }}</div>
                 <h3 class="text-headline-small font-weight-semibold mb-3">{{ p.name }}</h3>
                 <p class="text-body-large text-medium-emphasis mb-4">{{ p.summary }}</p>
+                <div v-if="p.image || p.video" class="project-media mb-5" :class="{ 'has-video': p.video }">
+                  <img
+                    v-if="p.image"
+                    :src="p.image.src"
+                    :srcset="p.image.srcset"
+                    sizes="(min-width: 960px) 480px, 100vw"
+                    :alt="p.image.alt"
+                    :width="p.image.width"
+                    :height="p.image.height"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <YouTubeLite v-if="p.video" v-bind="p.video" />
+                </div>
                 <ul class="highlights text-body-medium mb-4">
                   <li v-for="h in p.highlights" :key="h">{{ h }}</li>
                 </ul>
@@ -246,6 +261,33 @@ const year = new Date().getFullYear()
 
 a.press-item:hover {
   background: rgba(var(--v-theme-on-surface), 0.05);
+}
+
+.project-media {
+  display: grid;
+  gap: 12px;
+}
+
+.project-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.project-media .yt {
+  max-width: 180px;
+}
+
+/* Side by side on wider screens: column widths follow the 16:9 and 9:16 aspect ratios so heights match. */
+@media (min-width: 600px) {
+  .project-media.has-video {
+    grid-template-columns: 1.7778fr 0.5625fr;
+  }
+
+  .project-media .yt {
+    max-width: none;
+  }
 }
 
 .highlights {

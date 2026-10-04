@@ -27,6 +27,8 @@ export interface Project {
   highlights: string[]
   tags: string[]
   links?: { label: string; href: string }[]
+  image?: { src: string; srcset: string; alt: string; width: number; height: number }
+  video?: { youtubeId: string; title: string; thumbnail: string }
 }
 
 export const projects: Project[] = [
@@ -43,10 +45,19 @@ export const projects: Project[] = [
       'Prototyped with Pixar in a virtual pre-visualization of the full attraction, reviewed in VR',
     ],
     tags: ['Unreal Engine', 'Embedded real-time', 'Distributed systems'],
-    links: [
-      { label: 'TechRadar interview', href: press.techradar },
-      { label: 'Watch the final playtests', href: press.finalPlaytests },
-    ],
+    links: [{ label: 'TechRadar interview', href: press.techradar }],
+    image: {
+      src: '/img/projects/buzz-960.jpg',
+      srcset: '/img/projects/buzz-640.webp 640w, /img/projects/buzz-960.webp 960w, /img/projects/buzz-1280.webp 1280w',
+      alt: "Evan Klein in a hard hat and safety vest beside a Zurg target inside Buzz Lightyear's Space Ranger Spin",
+      width: 960,
+      height: 540,
+    },
+    video: {
+      youtubeId: 'EziuNjnMPOM',
+      title: "Final playtests for Buzz Lightyear's Space Ranger Spin",
+      thumbnail: 'https://i.ytimg.com/vi/EziuNjnMPOM/oardefault.jpg',
+    },
   },
   {
     name: 'Millennium Falcon: Smugglers Run x Fortnite',
