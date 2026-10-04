@@ -65,7 +65,7 @@ function structuredData() {
     '@type': 'ProfilePage',
     '@id': site,
     url: site,
-    name: `${profile.name} – ${profile.title}`,
+    name: `${profile.name} | ${profile.title}`,
     mainEntity: { '@id': personId },
   }
 
