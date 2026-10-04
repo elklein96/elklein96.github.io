@@ -177,7 +177,11 @@ const year = new Date().getFullYear()
               >
                 <v-card-item>
                   <template v-if="s.href" #append>
-                    <v-icon :icon="mdiGithub" size="small" class="text-medium-emphasis" />
+                    <v-icon
+                      :icon="s.href.includes('github.com') ? mdiGithub : mdiArrowTopRight"
+                      size="small"
+                      class="text-medium-emphasis"
+                    />
                   </template>
                   <v-card-title class="text-title-medium font-weight-semibold text-wrap px-0">{{ s.name }}</v-card-title>
                   <v-card-subtitle class="px-0">{{ s.tech }}</v-card-subtitle>

@@ -62,7 +62,12 @@ export const projects: Project[] = [
       'Rewards, including an exclusive outfit, delivered through linked MyDisney and Epic Games accounts',
     ],
     tags: ['Fortnite', 'Epic Games', 'Park-to-game integration'],
-    links: [{ label: 'How it works', href: 'https://www.epicgames.com/help/fortnite-battle-royale-c-34254770/gameplay-c-33726977/millennium-falcon-smugglers-run-faqs-a20791268' }],
+    links: [
+      {
+        label: 'TechRadar coverage',
+        href: 'https://www.techradar.com/streaming/entertainment/a-first-step-not-a-finish-line-disney-and-epic-games-have-connected-disney-worlds-and-disneylands-millennium-falcon-smugglers-run-to-a-brand-new-star-wars-adventure-in-fortnite',
+      },
+    ],
   },
   {
     name: 'Olaf Draws!',
@@ -76,7 +81,13 @@ export const projects: Project[] = [
       'Guests sketch characters from Mickey to Moana at animator-style workstations',
     ],
     tags: ['Animatronics', 'Control systems'],
-    links: [{ label: 'Attraction page', href: 'https://disneyworld.disney.go.com/attractions/hollywood-studios/olaf-draws-animation-class/' }],
+    links: [
+      {
+        label: 'TechRadar coverage',
+        href: 'https://www.techradar.com/streaming/entertainment/olaf-is-hosting-a-drawing-class-at-disney-world-and-yes-hell-teach-you-to-draw-himself',
+      },
+      { label: 'Attraction page', href: 'https://disneyworld.disney.go.com/attractions/hollywood-studios/olaf-draws-animation-class/' },
+    ],
   },
   {
     name: 'Star Wars: Galactic Starcruiser',
@@ -155,6 +166,7 @@ export const speaking: Mention[] = [
 ]
 
 export interface SideProject {
+  press?: { headline: string; date: string } // set when href is a news article rather than a repo
   name: string
   blurb: string
   tech: string
@@ -183,6 +195,8 @@ export const sideProjects: SideProject[] = [
   {
     name: 'LehighHacks',
     blurb: "Founded Lehigh University's hackathon and ran two 36-hour events with 150+ hackers each.",
-    tech: 'Organizer',
+    tech: 'Organizer · Featured in Lehigh News',
+    href: 'https://news.lehigh.edu/a-good-day-for-data',
+    press: { headline: 'A Good Day for Data', date: '2016-07-05' },
   },
 ]

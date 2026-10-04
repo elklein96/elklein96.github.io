@@ -1,7 +1,7 @@
 // Build-time SEO: JSON-LD structured data and sitemap.xml, generated from src/data/content.ts
 // so they never drift from what the page shows.
 import type { Plugin } from 'vite'
-import { profile, projects, sideProjects, site, speaking, type Mention } from './src/data/content.ts'
+import { profile, projects, sideProjects, site, speaking, type Mention, type SideProject } from './src/data/content.ts'
 
 const personId = `${site}#person`
 
@@ -20,6 +20,10 @@ function mention(m: Mention) {
   return { '@type': 'NewsArticle', headline: m.title, url: m.href, datePublished: m.date }
 }
 
+function sideProjectPress(s: SideProject) {
+  return { '@type': 'NewsArticle', headline: s.press!.headline, url: s.href, datePublished: s.press!.date }
+}
+
 function structuredData() {
   const person = {
     '@type': 'Person',
@@ -32,10 +36,11 @@ function structuredData() {
     alumniOf: { '@type': 'CollegeOrUniversity', name: 'Lehigh University' },
     homeLocation: { '@type': 'Place', name: profile.location },
     email: `mailto:${profile.email}`,
-    // Profiles that belong to this person. Press coverage goes in subjectOf, not here.
     sameAs: [profile.linkedin, profile.github],
-    // Talks are left out: Google's Event markup needs a venue and exact date, and only helps for upcoming events.
-    subjectOf: speaking.filter((s) => s.kind !== 'talk').map(mention),
+    subjectOf: [
+      ...speaking.filter((s) => s.kind !== 'talk').map(mention),
+      ...sideProjects.filter((s) => s.press).map(sideProjectPress),
+    ],
   }
 
   const attractions = projects.map((p) => ({
@@ -49,17 +54,12 @@ function structuredData() {
     ...(p.links && { url: p.links[0].href }),
   }))
 
-  const repos = sideProjects.map((s) =>
-    s.href
-      ? {
-          '@type': 'SoftwareSourceCode',
-          name: s.name,
-          description: s.blurb,
-          codeRepository: s.href,
-          author: { '@id': personId },
-        }
-      : { '@type': 'CreativeWork', name: s.name, description: s.blurb, author: { '@id': personId } },
-  )
+  const repos = sideProjects.map((s) => {
+    const base = { name: s.name, description: s.blurb, author: { '@id': personId } }
+    if (s.press) return { '@type': 'CreativeWork', ...base, subjectOf: sideProjectPress(s) }
+    if (s.href) return { '@type': 'SoftwareSourceCode', ...base, codeRepository: s.href }
+    return { '@type': 'CreativeWork', ...base }
+  })
 
   const page = {
     '@type': 'ProfilePage',
@@ -78,8 +78,6 @@ export function seo(): Plugin {
     transformIndexHtml: {
       order: 'post',
       handler(html, ctx) {
-        // One-page site: inline the stylesheet so first paint doesn't wait on a second request.
-        // (Critical-CSS extractors mangle Vuetify 4's nested @layer rules, so inline all of it.)
         for (const [file, chunk] of Object.entries(ctx.bundle ?? {})) {
           if (!file.endsWith('.css') || chunk.type !== 'asset') continue
           const link = new RegExp(`<link rel="stylesheet"[^>]*href="/${file}"[^>]*>`)
