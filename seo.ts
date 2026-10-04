@@ -75,15 +75,26 @@ function structuredData() {
 export function seo(): Plugin {
   return {
     name: 'site-seo',
-    transformIndexHtml() {
-      return [
-        {
+    transformIndexHtml: {
+      order: 'post',
+      handler(html, ctx) {
+        // One-page site: inline the stylesheet so first paint doesn't wait on a second request.
+        // (Critical-CSS extractors mangle Vuetify 4's nested @layer rules, so inline all of it.)
+        for (const [file, chunk] of Object.entries(ctx.bundle ?? {})) {
+          if (!file.endsWith('.css') || chunk.type !== 'asset') continue
+          const link = new RegExp(`<link rel="stylesheet"[^>]*href="/${file}"[^>]*>`)
+          if (!link.test(html)) continue
+          html = html.replace(link, () => `<style>${chunk.source}</style>`)
+          delete ctx.bundle![file]
+        }
+        const jsonLd = {
           tag: 'script',
           attrs: { type: 'application/ld+json' },
           children: JSON.stringify(structuredData()),
-          injectTo: 'head',
-        },
-      ]
+          injectTo: 'head' as const,
+        }
+        return { html, tags: [jsonLd] }
+      },
     },
     generateBundle() {
       if (this.environment.name !== 'client') return
