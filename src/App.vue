@@ -2,6 +2,7 @@
 import {
   mdiArrowTopRight,
   mdiEmailOutline,
+  mdiFileCertificateOutline,
   mdiGithub,
   mdiLinkedin,
   mdiMenu,
@@ -9,11 +10,12 @@ import {
   mdiNewspaperVariantOutline,
   mdiPlayCircleOutline,
 } from '@mdi/js'
-import { profile, projects, sideProjects, speaking } from './data/content'
+import { patents, profile, projects, sideProjects, speaking } from './data/content'
 import YouTubeLite from './components/YouTubeLite.vue'
 
 const nav = [
   { label: 'Projects', href: '#projects' },
+  { label: 'Patents', href: '#patents' },
   { label: 'Speaking', href: '#speaking' },
   { label: 'Side projects', href: '#side-projects' },
   { label: 'Contact', href: '#contact' },
@@ -80,6 +82,10 @@ const year = new Date().getFullYear()
               </h1>
               <p class="text-body-large text-medium-emphasis mb-0">
                 {{ profile.title }} · {{ profile.org }} · {{ profile.location }}
+              </p>
+              <p class="text-body-medium text-medium-emphasis mt-1 mb-0">
+                {{ profile.education.degree }},
+                <span class="text-no-wrap">{{ profile.education.school }}, {{ profile.education.year }}</span>
               </p>
             </div>
           </div>
@@ -153,6 +159,31 @@ const year = new Date().getFullYear()
               </v-col>
             </v-row>
           </article>
+        </section>
+
+        <!-- Patents -->
+        <section id="patents" class="section">
+          <h2 class="eyebrow text-label-large text-medium-emphasis mb-6">Patents</h2>
+          <ul class="press-list">
+            <li v-for="pt in patents" :key="pt.title">
+              <component
+                :is="pt.href ? 'a' : 'div'"
+                class="press-item text-high-emphasis"
+                :href="pt.href"
+                :target="pt.href ? '_blank' : undefined"
+                :rel="pt.href ? 'noopener' : undefined"
+              >
+                <v-icon :icon="mdiFileCertificateOutline" class="text-medium-emphasis mt-1" />
+                <span class="flex-grow-1">
+                  <span class="d-block text-title-medium font-weight-semibold">{{ pt.title }}</span>
+                  <span v-if="pt.number" class="d-block text-body-medium text-secondary">{{ pt.number }}</span>
+                  <span class="d-block text-body-medium text-medium-emphasis">{{ pt.status }}</span>
+                  <span v-if="pt.summary" class="d-block text-body-medium text-medium-emphasis mt-2 measure">{{ pt.summary }}</span>
+                </span>
+                <v-icon v-if="pt.href" :icon="mdiArrowTopRight" size="small" class="text-medium-emphasis mt-1" />
+              </component>
+            </li>
+          </ul>
         </section>
 
         <!-- Speaking & press -->

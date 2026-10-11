@@ -1,7 +1,7 @@
 // Build-time SEO: JSON-LD structured data and sitemap.xml, generated from src/data/content.ts
 // so they never drift from what the page shows.
 import type { Plugin } from 'vite'
-import { profile, projects, sideProjects, site, speaking, type Mention, type SideProject } from './src/data/content.ts'
+import { patents, profile, projects, sideProjects, site, speaking, type Mention, type SideProject } from './src/data/content.ts'
 
 const personId = `${site}#person`
 
@@ -24,6 +24,13 @@ function sideProjectPress(s: SideProject) {
   return { '@type': 'NewsArticle', headline: s.press!.headline, url: s.href, datePublished: s.press!.date }
 }
 
+const lehigh = {
+  '@type': 'CollegeOrUniversity',
+  name: profile.education.school,
+  url: profile.education.url,
+  sameAs: profile.education.wikipedia,
+}
+
 function structuredData() {
   const person = {
     '@type': 'Person',
@@ -33,7 +40,15 @@ function structuredData() {
     image: new URL(profile.photo, site).href,
     jobTitle: profile.title,
     worksFor: { '@type': 'Organization', name: profile.org },
-    alumniOf: { '@type': 'CollegeOrUniversity', name: 'Lehigh University' },
+    alumniOf: lehigh,
+    hasCredential: {
+      '@type': 'EducationalOccupationalCredential',
+      credentialCategory: 'degree',
+      name: profile.education.degreeFull,
+      educationalLevel: "Bachelor's degree",
+      dateCreated: profile.education.year,
+      recognizedBy: lehigh,
+    },
     homeLocation: { '@type': 'Place', name: profile.location },
     email: `mailto:${profile.email}`,
     sameAs: [profile.linkedin, profile.github],
@@ -61,6 +76,21 @@ function structuredData() {
     return { '@type': 'CreativeWork', ...base }
   })
 
+  // Only published applications are public records worth describing.
+  const patentWorks = patents
+    .filter((p) => p.number)
+    .map((p) => ({
+      '@type': 'CreativeWork',
+      additionalType: 'https://schema.org/Patent',
+      name: p.title,
+      identifier: p.number,
+      description: p.summary,
+      datePublished: p.date,
+      url: p.href,
+      creator: { '@id': personId },
+      publisher: { '@type': 'Organization', name: 'United States Patent and Trademark Office' },
+    }))
+
   const page = {
     '@type': 'ProfilePage',
     '@id': site,
@@ -69,7 +99,7 @@ function structuredData() {
     mainEntity: { '@id': personId },
   }
 
-  return { '@context': 'https://schema.org', '@graph': [page, person, ...attractions, ...repos] }
+  return { '@context': 'https://schema.org', '@graph': [page, person, ...attractions, ...patentWorks, ...repos] }
 }
 
 export function seo(): Plugin {

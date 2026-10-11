@@ -12,6 +12,14 @@ export const profile = {
   title: 'Manager, Software Product Engineering',
   org: 'Walt Disney Imagineering',
   location: 'Orlando, FL',
+  education: {
+    school: 'Lehigh University',
+    degree: 'B.S. Computer Engineering',
+    degreeFull: 'Bachelor of Science in Computer Engineering',
+    year: '2018',
+    url: 'https://www.lehigh.edu/',
+    wikipedia: 'https://en.wikipedia.org/wiki/Lehigh_University',
+  },
   email: 'elklein96@gmail.com',
   github: 'https://github.com/elklein96',
   linkedin: 'https://www.linkedin.com/in/elklein96',
@@ -129,6 +137,28 @@ export const projects: Project[] = [
         href: 'https://www.disneyfoodblog.com/2020/07/09/disney-just-introduced-a-way-to-get-early-access-to-high-demand-merchandise-releases-online/',
       },
     ],
+  },
+]
+
+export interface Patent {
+  title: string
+  number?: string // publication number, once published
+  status: string
+  summary?: string
+  date?: string // ISO publication date, used for structured data
+  href?: string
+}
+
+// Applications stay unpublished for ~18 months after filing; add them here once published.
+export const patents: Patent[] = [
+  {
+    title: 'Interactive game design system',
+    number: 'US 2026/0010272 A1',
+    status: 'Patent application · Co-inventor · Filed July 2024, published January 2026',
+    summary:
+      'Simulates an interactive physical environment with digital stand-ins for show elements, translating commands sent to them into control signals for the real devices, so an experience can be built and tested before and during construction, including against simulated guests.',
+    date: '2026-01-08',
+    href: 'https://patents.google.com/patent/US20260010272A1/en',
   },
 ]
 
