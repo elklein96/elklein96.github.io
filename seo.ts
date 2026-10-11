@@ -39,6 +39,7 @@ function structuredData() {
     url: site,
     image: new URL(profile.photo, site).href,
     jobTitle: profile.title,
+    description: profile.tagline,
     worksFor: { '@type': 'Organization', name: profile.org },
     alumniOf: lehigh,
     hasCredential: {
@@ -95,7 +96,7 @@ function structuredData() {
     '@type': 'ProfilePage',
     '@id': site,
     url: site,
-    name: `${profile.name} | ${profile.title}`,
+    name: `${profile.name} | ${profile.title} at ${profile.org}`,
     mainEntity: { '@id': personId },
   }
 

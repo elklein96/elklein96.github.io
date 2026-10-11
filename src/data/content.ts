@@ -12,7 +12,9 @@ const press = {
 
 export const profile = {
   name: 'Evan Klein',
-  title: 'Manager, Software Product Engineering',
+  title: 'Software Engineer', // structured-data jobTitle; the term recruiters search for
+  tagline:
+    'Creative technologist and software engineer, leading teams architecting the next generation of interactive experiences at Walt Disney Imagineering.',
   org: 'Walt Disney Imagineering',
   location: 'Orlando, FL',
   education: {

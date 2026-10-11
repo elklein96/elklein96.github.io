@@ -1,6 +1,6 @@
 # evanklein.tech
 
-Personal site for Evan Klein, Manager of Software Product Engineering at Walt Disney Imagineering.
+Personal site for Evan Klein, creative technologist and software engineer at Walt Disney Imagineering.
 
 [![Screenshot of evanklein.tech](.github/screenshot.jpg)](https://evanklein.tech)
 

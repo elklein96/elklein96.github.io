@@ -85,11 +85,11 @@ onMounted(() => initAnalytics(analyticsId))
               <h1 class="text-headline-large text-md-display-small font-weight-semibold mb-2">
                 {{ profile.name }}
               </h1>
-              <p class="text-body-large text-medium-emphasis mb-0">
-                {{ profile.title }} · {{ profile.org }} · {{ profile.location }}
+              <p class="text-body-large text-medium-emphasis mb-0 measure">
+                {{ profile.tagline }}
               </p>
               <p class="text-body-medium text-medium-emphasis mt-1 mb-0">
-                {{ profile.education.degree }},
+                {{ profile.location }} · {{ profile.education.degree }},
                 <span class="text-no-wrap">{{ profile.education.school }}, {{ profile.education.year }}</span>
               </p>
             </div>
