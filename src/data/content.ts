@@ -1,5 +1,8 @@
 export const site = 'https://evanklein.tech/'
 
+// Google Analytics 4 measurement ID (G-XXXXXXXXXX). Leave empty to disable analytics.
+export const analyticsId = 'G-5WYNV9J7ZG'
+
 const press = {
   techradar:
     'https://www.techradar.com/streaming/entertainment/we-tried-to-keep-the-soul-of-the-original-attraction-but-level-it-up-disney-world-transforms-buzz-lightyear-space-ranger-spin-into-a-real-time-ride-system-powered-by-unreal-engine',

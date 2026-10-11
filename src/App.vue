@@ -10,7 +10,9 @@ import {
   mdiNewspaperVariantOutline,
   mdiPlayCircleOutline,
 } from '@mdi/js'
-import { patents, profile, projects, sideProjects, speaking } from './data/content'
+import { onMounted } from 'vue'
+import { initAnalytics } from './analytics'
+import { analyticsId, patents, profile, projects, sideProjects, speaking } from './data/content'
 import YouTubeLite from './components/YouTubeLite.vue'
 
 const nav = [
@@ -34,6 +36,9 @@ const mentionIcons = {
 }
 
 const year = new Date().getFullYear()
+
+// Runs only in the browser (not during prerendering).
+onMounted(() => initAnalytics(analyticsId))
 </script>
 
 <template>

@@ -3,10 +3,16 @@
 // doesn't pull in YouTube's player (or its cookies) on load.
 import { ref } from 'vue'
 import { mdiPlay } from '@mdi/js'
+import { track } from '../analytics'
 
 const props = defineProps<{ youtubeId: string; title: string; thumbnail: string }>()
 const playing = ref(false)
 const src = `https://www.youtube-nocookie.com/embed/${props.youtubeId}?autoplay=1&playsinline=1`
+
+function play() {
+  playing.value = true
+  track('video_play', { video_title: props.title, video_id: props.youtubeId })
+}
 </script>
 
 <template>
@@ -18,7 +24,7 @@ const src = `https://www.youtube-nocookie.com/embed/${props.youtubeId}?autoplay=
       allow="autoplay; encrypted-media; picture-in-picture"
       allowfullscreen
     />
-    <button v-else type="button" :aria-label="`Play video: ${title}`" @click="playing = true">
+    <button v-else type="button" :aria-label="`Play video: ${title}`" @click="play">
       <img :src="thumbnail" alt="" loading="lazy" decoding="async" width="1080" height="1920" />
       <span class="play"><v-icon :icon="mdiPlay" size="32" /></span>
     </button>
