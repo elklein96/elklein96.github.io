@@ -234,14 +234,14 @@ export const sideProjects: SideProject[] = [
   {
     name: 'reelr',
     blurb: 'A lightweight movie server for the Raspberry Pi that streams files as-is, no transcoding.',
-    tech: 'JavaScript · PHP',
+    tech: 'JavaScript · Angular · Express',
     href: 'https://github.com/elklein96/reelr',
   },
   {
-    name: 'Gesture-controlled robotic arm',
-    blurb: 'An arm that mirrors its user, tracked through a Wiimote IR camera. First place, Coriell Science Fair.',
-    tech: 'Arduino · Wiimote IR',
-    href: 'https://github.com/elklein96/gesture-controlled-robotic-arm',
+    name: 'plex-dl',
+    blurb: 'A command-line tool that downloads movies and shows from a Plex server to a local folder.',
+    tech: 'Node.js · CLI · Plex API',
+    href: 'https://github.com/elklein96/plex-dl',
   },
   {
     name: 'LehighHacks',
